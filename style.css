@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background: lightgray; */
+    font-family: Montserrat, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto 2fr 3fr;
+    grid-template-rows: auto 2fr 3fr;
+    margin: auto;
+    width: fit-content;
+    margin-top: 1em;
+}
+
+.board {
+    width: 100%;
+    height: 100%;
+    /* background: darkgray; */
+    display: grid;
+    grid-template-columns: repeat(10, auto);
+    grid-template-rows: repeat(10, auto);
+    /* gap: 1px; */
+    /* margin: 1em; */
+    border: 2px solid black;
+}
+
+.enemy-board {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.your-board {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.empty {
+    background: white;
+    border: 0.5px solid lightgray;
+}
+
+.enemy-board .empty:hover {
+    border-color: black;
+}
+
+.ship {
+    background: darkslategray;
+    border-color: darkslategray;
+}
+
+.hit {
+    background: red;
+    border-color: red;
+}
+
+.miss {
+    background: lightgray;
+}
+
+.sunk {
+    background: black;
+}
+
+.your-x {
+    display: flex;
+    align-self: end;
+    height: 30px;
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.x div {
+    border-right: 2px solid lightgray;
+    border-top: 2px solid lightgray;
+    display: grid;
+    place-items: center;
+}
+
+.your-x div {
+    width: 30px;
+}
+
+.enemy-x div {
+    width: 20px;
+}
+
+.x div:first-child {
+    border-left: 2px solid lightgray;
+}
+
+.y {
+    display: flex;
+    flex-direction: column;
+    justify-self: end;
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.your-y {
+    width: 30px;
+}
+
+.enemy-y div {
+    height: 20px;
+}
+
+.y div {
+    border-top: 2px solid lightgray;
+    display: grid;
+    place-items: center;
+    border-left: 2px solid lightgray;
+}
+
+.your-y div {
+    height: 30px
+}
+
+.y div:last-child {
+    border-bottom: 2px solid lightgray;
+}
+
+.enemy-x {
+    display: flex;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    font-size: 0.7em;
+    height: 20px;
+}
+
+.enemy-y {
+    display: flex;
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.7em;
+    width: 20px;
+}
+
+.top {
+    font-weight: bold;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-between;
+    margin: 1em auto;
+    width: 520px;
+}
+
+.game-over {
+    font-size: 1.5em;
+}
+
+.fa-redo-alt {
+    font-size: 0.9em;
+    margin-left: 0.2em;
+    cursor: pointer;
+}
